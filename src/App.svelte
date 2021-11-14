@@ -10,6 +10,8 @@
 		</p>
 	</header>
 
+	<br><br>
+
 	<div class="rating">
 		<Rating bind:value={value} bind:color={color} bind:max={stars}/>
 	</div>
@@ -17,22 +19,28 @@
 	<br><br>
 
 	<form>
-		<div>Rating:</div>
-		<div>{minmax(value, 0, 5).toFixed(1)}</div>
+		<div class="control">
+			<div>Rating:</div>
+			<div>{parseFloat(value).toFixed(2)}</div>
+		</div>
 
-		<div>Color:</div>
-		<select bind:value={color}>
-			<option>red</option>
-			<option>green</option>
-			<option>blue</option>
-			<option>orange</option>
-			<option>purple</option>
-			<option>#0AD5CB</option>
-			<option>#739086</option>
-		</select>
+		<div class="control">
+			<div>Color:</div>
+			<select bind:value={color}>
+				<option>red</option>
+				<option>green</option>
+				<option>blue</option>
+				<option>orange</option>
+				<option>purple</option>
+				<option>#0AD5CB</option>
+				<option>#739086</option>
+			</select>
+		</div>
 
-		<div>Stars:</div>
-		<input type="range" bind:value={stars} min="1" max="20">
+		<div class="control">
+			<div>Stars:</div>
+			<input type="range" bind:value={stars} min="1" max="20">
+		</div>
 	</form>
 
 	<hr>
@@ -139,13 +147,8 @@
 	}
 
 	form {
-		max-width: 200px;
-		display: grid;
-		grid-template-columns: auto 1fr;
-		grid-template-rows: auto;
-		grid-column-gap: 1rem;
-		grid-row-gap: 1rem;
-		align-items: center;
+		display: flex;
+		justify-content: space-between;
 	}
 
 	form input, select {
