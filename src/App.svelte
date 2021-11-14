@@ -77,16 +77,12 @@
 		</div>
 	</div>
 
-	<br><br>
-
 	<div class="example">
 		<code>&lt;Rating value=&quot;0.9&quot; color=&quot;#AAA&quot; duration=&quot;10000&quot;/&gt;</code>
 		<div class="rating">
 			<Rating value="0.9" color="#AAA" duration="10000"/>
 		</div>
 	</div>
-
-	<br><br>
 
 	<div class="example">
 		<code>&lt;Rating value=&quot;0.4321&quot; max=&quot;1&quot;/&gt;</code>
