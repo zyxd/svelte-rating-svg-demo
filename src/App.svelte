@@ -1,7 +1,7 @@
 <main>
 	<header>
 		<h1>
-			<a href="https://github.com/zyxd/svelte-store-router">
+			<a href="https://github.com/zyxd/svelte-rating-svg">
 				svelte-rating-svg
 			</a>
 		</h1>
