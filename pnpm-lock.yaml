@@ -14,7 +14,7 @@ specifiers:
 
 dependencies:
   sirv-cli: 1.0.14
-  svelte-rating-svg: 1.0.0
+  svelte-rating-svg: 1.0.1
 
 devDependencies:
   '@rollup/plugin-commonjs': 17.1.0_rollup@2.60.0
@@ -617,8 +617,8 @@ packages:
       has-flag: 4.0.0
     dev: true
 
-  /svelte-rating-svg/1.0.0:
-    resolution: {integrity: sha512-cB04Mj6e9fI/JoBkopFJpZi2YlRQxvr43RUWBlBXief1MWz2ZHCVkgzZp3/qN3eXHWGwRSlikEZkI1+gomIM5A==}
+  /svelte-rating-svg/1.0.1:
+    resolution: {integrity: sha512-Xlc4WbMgyO0KHGEKX+8RsihKBUWA9Po5v6eTPQl9j3nmcY0w3PWrKcQ4rM5eVszGR7oO7TPLbZ4H0FN3T8Mkjw==}
     dev: false
 
   /svelte/3.44.1:

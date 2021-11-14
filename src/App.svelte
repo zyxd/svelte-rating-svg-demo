@@ -11,15 +11,16 @@
 	</header>
 
 	<div class="rating">
-		<Rating {value} {color} max={stars}/>
+		<Rating bind:value={value} bind:color={color} bind:max={stars}/>
 	</div>
-
-	<div>Rating: {minmax(value, 0, 5).toFixed(1)}</div>
 
 	<br><br>
 
 	<form>
-		<div class="label">Color:</div>
+		<div>Rating:</div>
+		<div>{minmax(value, 0, 5).toFixed(1)}</div>
+
+		<div>Color:</div>
 		<select bind:value={color}>
 			<option>red</option>
 			<option>green</option>
@@ -30,9 +31,61 @@
 			<option>#739086</option>
 		</select>
 
-		<div class="label">Stars:</div>
+		<div>Stars:</div>
 		<input type="range" bind:value={stars} min="1" max="20">
 	</form>
+
+	<hr>
+
+	<h3>Installation</h3>
+	<code>npm install svelte-rating-svg</code>
+
+	<br><br>
+
+	<h3>Usage</h3>
+	<code>
+&lt;Rating/&gt;
+
+&lt;script&gt;
+  import Rating from 'svelte-rating-svg'
+&lt;/script&gt;
+	</code>
+
+	<br><br>
+
+	<h3>Properties</h3>
+	<p><strong>value</strong> - Value between 0 and 1</p>
+	<p><strong>color</strong> - Color of stars</p>
+	<p><strong>max</strong> - Maximum number of stars</p>
+	<p><strong>duration</strong> - Filling of rating duration in seconds</p>
+
+	<br><br>
+
+	<h3>Examples</h3>
+	<div class="example">
+		<code>&lt;Rating value=&quot;0.5&quot; color=&quot;green&quot; max=&quot;3&quot;/&gt;</code>
+		<div class="rating">
+			<Rating value="0.5" color="green" max="3"/>
+		</div>
+	</div>
+
+	<br><br>
+
+	<div class="example">
+		<code>&lt;Rating value=&quot;0.9&quot; color=&quot;#AAA&quot; duration=&quot;10000&quot;/&gt;</code>
+		<div class="rating">
+			<Rating value="0.9" color="#AAA" duration="10000"/>
+		</div>
+	</div>
+
+	<br><br>
+
+	<div class="example">
+		<code>&lt;Rating value=&quot;0.4321&quot; max=&quot;1&quot;/&gt;</code>
+		<div class="rating">
+			<Rating value="0.4321" max="1"/>
+		</div>
+	</div>
 </main>
 
 <script>
@@ -53,7 +106,7 @@
 		margin: 0 auto;
 	}
 
-	h1 {
+	header h1 {
 		color: #ff3e00;
 		text-transform: uppercase;
 		font-size: 1.5rem;
@@ -63,11 +116,11 @@
 		padding: 0.4rem 0;
 	}
 
-	h1 > a {
+	header h1 > a {
 		color: inherit;
 	}
 
-	p {
+	header p {
 		font-size: 0.8rem;
 		text-align: center;
 	}
@@ -86,18 +139,43 @@
 	}
 
 	form {
-		font-size: 0.8rem;
-		max-width: 250px;
+		max-width: 200px;
 		display: grid;
 		grid-template-columns: auto 1fr;
 		grid-template-rows: auto;
 		grid-column-gap: 1rem;
 		grid-row-gap: 1rem;
 		align-items: center;
-		;
 	}
 
 	form input, select {
 		margin: 0;
+	}
+
+	hr {
+		margin: 3rem 0;
+	}
+
+	p {
+		margin: 0;
+	}
+
+	.example {
+		display: grid;
+		grid-template-columns: 70% 1fr;
+		grid-column-gap: 1rem;
+		grid-row-gap: 1rem;
+		align-items: center;
+	}
+
+	code {
+		display: block;
+		background-color: rgb(246, 250, 253);
+		border-width: 1px;
+		border-style: solid;
+		border-color: #ccc;
+		border-radius: 4px;
+		padding: 0.5rem;
+		white-space: pre-wrap;
 	}
 </style>
